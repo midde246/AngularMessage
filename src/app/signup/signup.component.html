@@ -1,0 +1,30 @@
+ <div class="main">
+        <form>
+            <div class="form-group">
+                <label for ="name"> NAME : </label>
+                <input type="text" name="name" id="name" class = "form-control" #name [(ngModel)] ="dataSet.name" >    
+                <div class="alert alert-danger" *ngIf ="!name.value">This field is required</div>
+            </div>
+            <div class="form-group">
+                <label for ="email"> EMAIL : </label>
+                <input type="text" name="email" id="email" class = "form-control" #email [(ngModel)] ="dataSet.email">  
+                <div class="alert alert-danger" *ngIf ="!email.value">This field is required</div>  
+            </div>
+            <div class="form-group">
+                <label for ="contact"> CONTACT : </label>
+                <input type="text" name="contact" id="contact" class = "form-control" #contact [(ngModel)] ="dataSet.contact">  
+                <div class="alert alert-danger" *ngIf ="!contact.value">This field is required</div>  
+            </div>
+            <div class="form-group">
+                <label for ="pwd"> PASSWORD : </label>
+                <input type="password" name="pwd" id="pwd" cols="30" rows="10" class="form-control" #pwd [(ngModel)] ="dataSet.password"> 
+                <div class="alert alert-danger" *ngIf ="!pwd.value">This field is required</div>    
+            </div>
+            <div class="form-group">
+                <label for ="cpwd">CONFIRM PASSWORD : </label>
+                <input type="password" name="cpwd" id="cpwd" cols="30" rows="10" class="form-control">     
+            </div>
+
+            <input type="submit" class ="btn-primary btn" value="Submit" (click)="formData()">
+        </form>
+ </div>

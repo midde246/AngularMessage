@@ -1,0 +1,29 @@
+<!-- <div class="main">    
+        <form>
+            <input type="text" name="message" [(ngModel)] = "dataSet.message">
+            <button (click) ="sendMessage()">Send Message</button>
+        </form>        
+</div>
+
+<div class="main">    
+       <form>
+           <button (click) ="getMessage()">New Message</button>
+       </form>
+      
+       <div *ngFor ="let messageData of messageDatas">
+            {{messageData.message}}
+          </div>  
+         
+   </div>
+ -->
+
+   <div class="main">    
+    <form>
+        USERNAME: <input type="text" name="uname" [(ngModel)] = "dataSet.username">
+        PASSWORD: <input type="password" name="pwd" [(ngModel)] = "dataSet.password">
+        <button (click) ="testLogin()">Login</button>
+    </form>        
+</div>
+<div>
+        <button (click) ="checkSession()">Check Session</button>
+</div>    

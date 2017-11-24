@@ -1,0 +1,27 @@
+ 
+        <form (ngSubmit) ="formSubmit()">
+            <div class="form-group">
+                <label for ="name"> NAME : </label>
+                <input type="text" name="name" id="name" class = "form-control" #name [(ngModel)] ="dataSet.name" >    
+                <div class="alert alert-danger" *ngIf ="!name.touched">This field is required</div>
+            </div>
+            <div class="form-group">
+                <label for ="email"> EMAIL : </label>
+                <input type="text" name="email" id="email" class = "form-control" [(ngModel)] ="dataSet.email">    
+            </div>
+            <div class="form-group">
+                <label for ="contact"> CONTACT : </label>
+                <input type="text" name="contact" id="contact" class = "form-control" [(ngModel)] ="dataSet.contact">    
+            </div>
+            <div class="form-group">
+                <label for ="pwd"> PASSWORD : </label>
+                <input type="password" name="about" id="about" cols="30" rows="10" class="form-control">     
+            </div>
+            <div class="form-group">
+                <label for ="cpwd">CONFIRM PASSWORD : </label>
+                <input type="password" name="cpwd" id="cpwd" cols="30" rows="10" class="form-control">     
+            </div>
+
+            <button class ="btn-primary btn">Submit</button>
+        </form>
+ 
