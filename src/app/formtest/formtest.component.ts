@@ -36,7 +36,11 @@ export class FormtestComponent{
                 
           }  
       )
-}
+   }
+   
+   fileUpload(){
+     
+   }
 
 
 } 

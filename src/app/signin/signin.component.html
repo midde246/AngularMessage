@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
     <form>
                
         <div class="form-group">
@@ -15,4 +15,25 @@
 
         <input type="submit" class ="btn-primary btn" value="Submit" (click)="formData()">
     </form>
+</div> -->
+
+
+<div class="main">
+    <form [formGroup]="userSigninForm">           
+        <div class="form-group">
+            <label for ="email"> EMAIL : </label>
+            <input type="text" formControlName="email" id="email" class = "form-control" #email [(ngModel)] ="dataSet.email">  
+            <div class="alert alert-danger" *ngIf ="!userSigninForm.controls['email'].value && userSigninForm.controls['email'].touched">This field is required</div>  
+        </div>
+        
+        <div class="form-group">
+            <label for ="password"> PASSWORD : </label>
+            <input type="password" formControlName="password" id="password" cols="30" rows="10" class="form-control" #password [(ngModel)] ="dataSet.password"> 
+            <div class="alert alert-danger" *ngIf ="!userSigninForm.controls['password'].value && userSigninForm.controls['password'].touched">This field is required</div>    
+        </div>    
+
+        <input [disabled]="!email.value || !password.value"  type="submit" class ="btn-primary btn" value="Submit" (click)="formData()">
+    </form>
+    <button (click)="checkSession()">Check Session</button>
 </div>
+ 

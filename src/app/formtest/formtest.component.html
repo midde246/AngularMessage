@@ -1,3 +1,4 @@
+<h1 align="center"> <u> Image or File Uploading: </u> </h1>
 <!-- <div class="main">    
         <form>
             <input type="text" name="message" [(ngModel)] = "dataSet.message">
@@ -17,7 +18,7 @@
    </div>
  -->
 
-   <div class="main">    
+  <!--  <div class="main">    
     <form>
         USERNAME: <input type="text" name="uname" [(ngModel)] = "dataSet.username">
         PASSWORD: <input type="password" name="pwd" [(ngModel)] = "dataSet.password">
@@ -26,4 +27,15 @@
 </div>
 <div>
         <button (click) ="checkSession()">Check Session</button>
-</div>    
+</div>  
+ -->
+
+
+ <div class="main">    
+    <form>
+        <input type="file" class="btn btn-success" #getTheFile>
+        <button (click) ="fileUpload()" class="btn btn-primary" >Upload</button>
+    </form>        
+</div>
+ 
+

@@ -2,7 +2,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 //import { RouterModule }  from '@angular/router';
 import { routing }  from './app.routing';
  
@@ -14,6 +14,7 @@ import { AddingComponent }  from './adding/adding.component';
 import { SignupComponent }  from './signup/signup.component';
 import { SigninComponent }  from './signin/signin.component';
 import { HomeComponent }  from './home/home.component';
+import { ChildComponent }  from './home/child.component';
 import { FormtestComponent }  from './formtest/formtest.component';
 
 //Services Dependencies..
@@ -21,7 +22,11 @@ import { StudentsService } from './students.service';
 import { SignupService } from './allservices/signup.service';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, FormsModule, routing
+  imports:      [ BrowserModule, 
+                  HttpModule,
+                  FormsModule,
+                  routing,
+                  ReactiveFormsModule
               /*   RouterModule.forRoot(routes)  */
                 ],
 
@@ -32,8 +37,10 @@ import { SignupService } from './allservices/signup.service';
                   HomeComponent,
                   SigninComponent,
                   SignupComponent,
+                  ChildComponent,
                   FormtestComponent
                    ],
+  entryComponents: [ChildComponent],                 
   providers:    [ StudentsService, SignupService ],
   bootstrap:    [ AppComponent ]
 })

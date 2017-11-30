@@ -16,8 +16,12 @@ export class SignupService{
           return this._http.post(this._urlSignup, dataSet).map((response:Response) => response)
    }
 
+   // Send data to backend signin for test....
    sendDataToBackendSignin(dataSet:any){
-          return this._http.post(this._urlSignin, dataSet).map((response:Response) => response)
+          //console.log(dataSet)
+          return this._http.post(this._urlTestLogin, dataSet).map(
+              (response:Response) => response
+            )
    }
 
    //GEt the mesage fom backend
@@ -43,8 +47,7 @@ export class SignupService{
   //For checking session
   checkSession(){
     return this._http.get(this._urlCheckSession).map(
-        (response: Response) => response.json()
-         
+        (response: Response) => response  
     )
   }
 }  
