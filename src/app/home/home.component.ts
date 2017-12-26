@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver/* , ComponentFactory */, ComponentRef } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { ChildComponent } from './child.component';
 
 @Component({
@@ -11,19 +11,19 @@ export class HomeComponent  {
   componentRef: ComponentRef<ChildComponent>;
 
   constructor(private resolver: ComponentFactoryResolver){}
+  dataSet = {
+                "Email": "vvangogh@gmail.com",
+                "FirstName": "Vincent",
+                "LastName": "van",
+                "MiddleName": "Gogh",
+                "Mobile": "86944965"
+            };
  
-   testSearch(seachItem:any){
-      console.log(seachItem)
-      if(seachItem == "midde"){
-        alert("Search matched");
-        this.createComponent(seachItem);
-      }
-      else{
-        alert("Sorry request not found");
-      }
+   testSearch(){
+      
+        this.createComponent(this.dataSet); 
+        return false;
    }
-
-
 
   createComponent(item:any){
       this.childContainer.clear()
@@ -31,7 +31,6 @@ export class HomeComponent  {
       
       this.componentRef = this.childContainer.createComponent(factory);
       this.componentRef.instance.item = item;
-      //this.componentRef.instance.output.subscribe(event => console.log(event)); 
   }
 
   ngOnDestroy() {

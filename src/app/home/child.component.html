@@ -1,1 +1,5 @@
-<h2> HI {{item}}, I have dynamically created a new component for you.</h2>
+<div [ngStyle]="{'width':'100px', 'background-color':'grey', 'border': '1px solid black'}"> Name: {{item.FirstName}} {{item.MiddleName}} {{item.LastName}} <br>
+                        Email: {{item.email}}  <br>
+                        Mobile: {{item.Mobile}}                       
+</div>
+             

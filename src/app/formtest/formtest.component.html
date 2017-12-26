@@ -1,4 +1,4 @@
-<h1 align="center"> <u> Image or File Uploading: </u> </h1>
+ 
 <!-- <div class="main">    
         <form>
             <input type="text" name="message" [(ngModel)] = "dataSet.message">
@@ -15,10 +15,10 @@
             {{messageData.message}}
           </div>  
          
-   </div>
- -->
+   </div> -->
 
-  <!--  <div class="main">    
+
+   <div class="main">    
     <form>
         USERNAME: <input type="text" name="uname" [(ngModel)] = "dataSet.username">
         PASSWORD: <input type="password" name="pwd" [(ngModel)] = "dataSet.password">
@@ -28,14 +28,36 @@
 <div>
         <button (click) ="checkSession()">Check Session</button>
 </div>  
- -->
 
 
- <div class="main">    
+
+ <!-- <div class="main">    
     <form>
-        <input type="file" class="btn btn-success" #getTheFile>
-        <button (click) ="fileUpload()" class="btn btn-primary" >Upload</button>
+        <button (click) ="showJson()" class="btn btn-primary" >Show Data</button>
+       
     </form>        
-</div>
- 
+</div> 
 
+{"furniture": {
+             "bed": {
+               "4": "I am First in bed",
+               "6": "I am Second in bed",
+               "7": "I am Third in bed"
+              },
+             "Chair": {
+                 "5": "I am First in Chair"
+                 }
+             }
+          }
+-->
+<!--  
+<div *ngFor= "let subCat of jsonDataSets | keys">
+    {{subCat}}
+    <div *ngFor = "let attr of jsonDataSets[subCat] | keys">
+        {{attr}} 
+          <div *ngFor="let image of jsonDataSets[subCat][attr] | keys">
+             {{image}} : {{jsonDataSets[subCat][attr][image]}}
+          </div> 
+    </div>
+</div> -->
+<!-- <div *ngFor="let key of objs | keys">{{key}}:{{objs[key].description}}</div> -->

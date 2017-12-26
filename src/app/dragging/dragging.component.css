@@ -1,0 +1,13 @@
+.dropPlace{
+    height: 300px;
+    width:300px;
+    background-color: skyblue;
+}
+
+li{
+    width: 50px;
+    height:25px;
+    padding: 3px;
+    background-color: gray;
+    border: 2px solid black;
+}
