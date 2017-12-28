@@ -14,28 +14,26 @@ export class SigninComponent{
     }
     
     userSigninForm = new FormGroup({
-        email: new FormControl(),
+        username: new FormControl(),
         password: new FormControl()
     })
-
-    dataSet = {}
-    resData:any
+    
+    accessdata  = {}
 
     formData(){
         //this.dataSet = JSON.stringify(this.userSigninForm.value)
-        //console.log(this.dataSet);
+        //console.log(this.userSigninForm.value);
         this._signupService.sendDataToBackendSignin(this.userSigninForm.value).subscribe(
-            respodata =>  console.log(respodata) 
+            respodata =>  {               
+                //this.accessdata =  respodata
+                console.log(respodata.json())
+                this.accessdata = respodata.json()
+               }
         )
-        //console.log(this.resData)
     }
-
-    /* FormDataTest(){
-        console.log(this.userSigninForm.value);
-    } */
-
+ 
     checkSession(){
-        this._signupService.checkSession().subscribe(
+        this._signupService.checkSession(this.accessdata.token).subscribe(
             respodata =>  console.log(respodata)  
         )
     }

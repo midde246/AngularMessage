@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{ Http,Response } from '@angular/http';
+import{ Http,Response,Headers } from '@angular/http';
 import 'rxjs/add/operator/map'
 @Injectable()
 
@@ -40,14 +40,19 @@ export class SignupService{
 
    // testLogin for session create..
    testLogin(dataSet:any){
-    console.log(dataSet);
-    return this._http.post(this._urlTestLogin, dataSet).map((response:Response) => response)
-  }
+    return this._http.post(this._urlTestLogin, dataSet).map(
+        (response:Response) => {
+            //response = response.json()
+            console.log(response.json());
+        }
+    )}
 
   //For checking session
-  checkSession(){
-    return this._http.get(this._urlCheckSession).map(
-        (response: Response) => response  
+  checkSession(accessToken:string){
+    let myHeader = new Headers({ 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoib…3Mjh9.Q5w2m911FWmuM-0wJKyQ8gSW4w9ul9csPGBvroWuk8A' });
+
+    return this._http.get(this._urlCheckSession, { headers: myHeader }).map(
+        (response: Response) => response.json()  
     )
   }
 }  
